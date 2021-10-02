@@ -10,7 +10,7 @@
 
 ## Starting the project
 
-1. Place the tokens and keys in a .env folder in the project folder
+1. Place the tokens and keys in the in index.js file inside the server folder
 2. run the command - npm run dev
 
   App will be open in the default url http://localhost:3001
