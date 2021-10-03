@@ -18,13 +18,11 @@ const App = () => {
       <GlobalStyle />
       <Router>
         <Switch>
-          {favourites.map(({ handleName }) => (
-            <Route key={handleName} path={`/${handleName}`} exact>
-              <Layout>
-                <Feed />
-              </Layout>
-            </Route>
-          ))}
+          <Route path="/:handleName" exact>
+            <Layout>
+              <Feed />
+            </Layout>
+          </Route>
           {/* Redirect if the paths are diffrent from favourites */}
           <Redirect to={favourites[0].handleName} />
         </Switch>

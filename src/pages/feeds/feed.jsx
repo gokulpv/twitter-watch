@@ -4,7 +4,7 @@ import Tweet from "../../components/tweet/tweet";
 import Loader from "../../components/loader/loader";
 import { useIntersection } from "../../hooks/useIntersectionObserver";
 import { PageHeader } from "./feed.components";
-import { useRouteMatch } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 // actions
 import { getTweets } from "./Feed.actions";
@@ -13,8 +13,7 @@ let lastId = {};
 
 const Feed = () => {
   // get params from url.
-  const { path } = useRouteMatch();
-  const handleName = path.replace("/", "");
+  const { handleName } = useParams();
   const bottomElement = React.useRef();
   const [tweets, setTweets] = React.useState({});
 
@@ -22,10 +21,6 @@ const Feed = () => {
   const { count } = useIntersection(bottomElement, {
     rootMargin: "0px 0px -20px 0px",
   });
-
-  React.useEffect(() => {
-    console.log("test");
-  }, []);
 
   // Make new requests upon the first render and and subsequently after intersection entry
   React.useEffect(() => {
@@ -53,7 +48,6 @@ const Feed = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
-  console.log(tweets);
   return (
     <>
       {tweets && Object.keys(tweets).length > 0 && (

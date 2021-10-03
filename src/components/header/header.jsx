@@ -1,14 +1,19 @@
 import React from "react";
 
-import { useRouteMatch } from "react-router";
+import { useParams, useHistory } from "react-router";
 import { Nav, NavItems, NavItem, NavLogo } from "./header.components";
 import ProfileView from "./profile/profileView";
 import TwitterLogo from "../../assets/icons/twitter-icon.svg";
 import favourites from "../../config/favourites.config";
 
 const Header = ({ navItemClicked }) => {
-  const { path } = useRouteMatch();
-  const handleName = path.replace("/", "");
+  const { handleName } = useParams();
+  const history = useHistory();
+  const isPathValid = favourites.find((item) => item.handleName === handleName);
+
+  if (!isPathValid) {
+    history.goBack();
+  }
 
   const handleNavItemClicked = (toPath) => {
     // call 'navItemClicked' only when current path == to path
@@ -29,10 +34,7 @@ const Header = ({ navItemClicked }) => {
             activeClassName="active"
             onClick={handleNavItemClicked.bind(null, profile.handleName)}
           >
-            <ProfileView
-              profile={profile}
-              onClicked={() => console.log("clickedd")}
-            />
+            <ProfileView profile={profile} />
           </NavItem>
         ))}
       </NavItems>
