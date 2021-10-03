@@ -55,7 +55,7 @@ const Feed = () => {
           <PageHeader data-testid="top-element">
             <div>Latest tweets </div>
             <div>
-              Showing results for tweeted <span>{`@${handleName}`}</span>
+              Showing results for tweets <span>{`@${handleName}`}</span>
             </div>
           </PageHeader>{" "}
           {tweets[handleName]?.map((tweet, idx) => (
@@ -63,6 +63,7 @@ const Feed = () => {
           ))}
         </>
       )}
+
       <div ref={bottomElement}>
         <Loader data-testid="loader" />
       </div>
