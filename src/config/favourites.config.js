@@ -4,8 +4,8 @@ const favourites = [
     handleName: "POTUS",
   },
   {
-    displayName: "Elon Musk",
-    handleName: "elonmusk",
+    displayName: "CNN News",
+    handleName: "cnnbrk",
   },
 ];
 
