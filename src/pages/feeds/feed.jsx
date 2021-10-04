@@ -63,6 +63,7 @@ const Feed = () => {
           ))}
         </>
       )}
+
       <div ref={bottomElement}>
         <Loader data-testid="loader" />
       </div>
