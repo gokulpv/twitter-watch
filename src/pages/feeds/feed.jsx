@@ -58,9 +58,10 @@ const Feed = () => {
               Showing results for <span>{`@${handleName}`}</span>
             </div>
           </PageHeader>{" "}
-          {tweets[handleName]?.map((tweet, idx) => (
-            <Tweet key={idx} tweet={tweet} data-testid="tweet" />
-          ))}
+          {tweets[handleName] &&
+            tweets[handleName].map((tweet, idx) => (
+              <Tweet key={idx} tweet={tweet} data-testid="tweet" />
+            ))}
         </>
       )}
       <div ref={bottomElement}>

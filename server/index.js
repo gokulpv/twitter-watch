@@ -4,10 +4,10 @@ var cors = require("cors");
 require("dotenv").config();
 
 const client = new Twitter({
-  consumer_key: "",
-  consumer_secret: "",
-  access_token_key: "",
-  access_token_secret: "",
+  consumer_key: "BuKKrNHWvP3qTkpj8eytyQ0mb",
+  consumer_secret: "lePsFrQDxTSlnn0pjs59ShCpIJ2oFqo2pMe0dYfBOkC2orNxc3",
+  access_token_key: "1443084453836775429-HCdNqgdY9gONULrADfbMVC01mUvIRU",
+  access_token_secret: "rsscdeTnHgQA6V5mREKf0fenaU3ZS9QpUTHUTI5rTORTM",
 });
 
 const defaults = {
